@@ -16,7 +16,7 @@ const Footer: React.FC = () => {
               Your trusted partner for hospital-grade medical equipment. Dedicated to improving patient care at home and in clinics.
             </p>
             <div className="flex gap-4 pt-2">
-              <a href="#" className="hover:text-medical-primary transition-colors"><Facebook size={20} /></a>
+              <a href="https://www.facebook.com/mohsin.surgicals.7#" className="hover:text-medical-primary transition-colors"><Facebook size={20} /></a>
               <a href="#" className="hover:text-medical-primary transition-colors"><Twitter size={20} /></a>
               <a href="#" className="hover:text-medical-primary transition-colors"><Instagram size={20} /></a>
             </div>

@@ -61,7 +61,7 @@ const HomePage: React.FC = () => {
              </div>
              <div className="absolute bottom-4 left-4 right-4 bg-white/90 p-3 rounded-lg text-medical-dark text-center shadow-lg">
                 <p className="font-bold text-sm">Need help choosing?</p>
-                <p className="text-xs">Call our Expert: +91-98765-43210</p>
+                <p className="text-xs">Call our Expert: +91 93903 49389</p>
              </div>
           </div>
         </div>
