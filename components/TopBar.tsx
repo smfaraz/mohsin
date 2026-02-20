@@ -11,7 +11,7 @@ const TopBar: React.FC = () => {
             <Phone size={14} />
             <span>{CONTACT_PHONE}</span>
           </a>
-          <a href="#" className="flex items-center gap-1 hover:text-green-400 transition-colors">
+          <a href="https://wa.me/919390349389" className="flex items-center gap-1 hover:text-green-400 transition-colors">
             <MessageCircle size={14} />
             <span>WhatsApp Support</span>
           </a>

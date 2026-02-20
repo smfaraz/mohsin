@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route } from './context/CartContext';
 import Header from './components/Header';
 import Footer from './components/Footer';
 import HomePage from './pages/HomePage';
@@ -58,7 +58,7 @@ function App() {
             
             {/* Sticky WhatsApp Button */}
             <a 
-              href="#" 
+              href="https://wa.me/919390349389" 
               className="fixed bottom-6 right-6 z-40 bg-green-500 text-white p-3 rounded-full shadow-lg hover:bg-green-600 transition-all hover:scale-110 flex items-center justify-center"
               aria-label="Chat on WhatsApp"
             >

@@ -7,6 +7,7 @@ import {
   removeLineItemFromCart, 
   updateLineItemInCart 
 } from '../lib/shopify';
+
 import { attachCustomerToCart } from "../lib/shopify";
 
 
