@@ -7,6 +7,8 @@ import {
   removeLineItemFromCart, 
   updateLineItemInCart 
 } from '../lib/shopify';
+import { attachCustomerToCart } from "../lib/shopify";
+
 
 // --- Router Shim for missing react-router-dom ---
 const RouterContext = createContext<{ path: string; search: string; navigate: (to: string) => void } | undefined>(undefined);
@@ -236,6 +238,7 @@ export const CartProvider: React.FC<{ children: React.ReactNode }> = ({ children
     if (!cartId || !product.variantId) {
         // Retry init if failed previously
         const newCart = await createShopifyCart();
+        localStorage.setItem("cartId", newCart.id);
         setCartId(newCart.id);
         localStorage.setItem('shopify_cart_id', newCart.id);
         if(!newCart.id) return;

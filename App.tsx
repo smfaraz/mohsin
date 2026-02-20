@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter as Router, Routes, Route } from './context/CartContext';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Header from './components/Header';
 import Footer from './components/Footer';
 import HomePage from './pages/HomePage';
@@ -18,6 +18,7 @@ import AccountPage from './pages/AccountPage';
 import OrderSuccessPage from './pages/OrderSuccessPage';
 import { CartProvider } from './context/CartContext';
 import { AuthProvider } from './context/AuthContext';
+
 
 // Scroll to top on route change component
 const ScrollToTopOnMount = () => {

@@ -49,6 +49,13 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
     try {
       const token = await loginCustomer(email, pass);
       localStorage.setItem('shopify_customer_token', token);
+      // attach customer to existing cart
+       const cartId = localStorage.getItem("cartId");
+      if (cartId) {
+          const { attachCustomerToCart } = await import("../lib/shopify");
+          await attachCustomerToCart(cartId);
+        }
+
       await refreshCustomer();
     } finally {
       setIsLoading(false);

@@ -94,19 +94,28 @@ const CART_FRAGMENT = `
   }
 `;
 
-export const createShopifyCart = async () => {
+export const createShopifyCart = async (customerToken?: string) => {
   const query = `
-    mutation cartCreate {
-      cartCreate {
+    mutation cartCreate($buyerIdentity: CartBuyerIdentityInput) {
+      cartCreate(input: { buyerIdentity: $buyerIdentity }) {
         cart {
-          ${CART_FRAGMENT}
+          id
+          checkoutUrl
         }
       }
     }
   `;
-  const data: any = await shopifyFetch(query);
+
+  const variables = {
+    buyerIdentity: customerToken
+      ? { customerAccessToken: customerToken }
+      : null
+  };
+
+  const data: any = await shopifyFetch(query, variables);
   return data.cartCreate.cart;
 };
+
 
 export const fetchShopifyCart = async (cartId: string) => {
   const query = `
@@ -118,6 +127,32 @@ export const fetchShopifyCart = async (cartId: string) => {
   `;
   const data: any = await shopifyFetch(query, { cartId });
   return data.cart;
+};
+
+export const attachCustomerToCart = async (cartId: string) => {
+  const token = localStorage.getItem("shopify_customer_token");
+
+  if (!token) return;
+
+  const query = `
+    mutation cartBuyerIdentityUpdate($cartId: ID!, $buyerIdentity: CartBuyerIdentityInput!) {
+      cartBuyerIdentityUpdate(cartId: $cartId, buyerIdentity: $buyerIdentity) {
+        cart {
+          id
+          checkoutUrl
+        }
+      }
+    }
+  `;
+
+  const variables = {
+    cartId,
+    buyerIdentity: {
+      customerAccessToken: token,
+    },
+  };
+
+  await shopifyFetch(query, variables);
 };
 
 export const addItemToCart = async (cartId: string, lines: {merchandiseId: string, quantity: number}[]) => {
