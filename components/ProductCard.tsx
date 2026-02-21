@@ -35,9 +35,8 @@ const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
   };
 
   const handleNavigate = () => {
-    // Encode ID to handle Shopify GIDs safely in URL (e.g. gid://...)
-    navigate(`/products/${encodeURIComponent(product.id)}`);
-  };
+  navigate(`/products/${product.handle}`); // descriptive URL
+};
 
   return (
     <div 

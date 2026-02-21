@@ -1,9 +1,11 @@
 import React from 'react';
 
+// types.ts
 export interface Product {
-  id: string; // Base64 ID from Shopify
-  title: string;
+  id: string;
+  handle: string; // Add this field
   vendor: string;
+  title: string;
   category: string;
   price: number;
   compareAtPrice: number | null;

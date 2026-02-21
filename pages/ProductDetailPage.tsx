@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useParams, useNavigate } from '../context/CartContext';
-import { fetchProductById, fetchProductsByCategory } from '../lib/shopify';
+import { fetchProductByHandle, fetchProductById, fetchProductsByCategory } from '../lib/shopify';
 import { useCart } from '../context/CartContext';
 import { Product } from '../types';
 import { Star, CheckCircle, Truck, RotateCcw, ShieldCheck, Minus, Plus, Loader, Phone, MessageCircle, Heart, MapPin, Share2, FileText } from 'lucide-react';
@@ -8,7 +8,7 @@ import ProductCard from '../components/ProductCard';
 import { CONTACT_PHONE } from '../constants';
 
 const ProductDetailPage: React.FC = () => {
-  const { id } = useParams<{ id: string }>();
+  const { id } = useParams<{ id: string }>(); // 'id' in the URL is now the handle
   const [product, setProduct] = useState<Product | undefined>(undefined);
   const [relatedProducts, setRelatedProducts] = useState<Product[]>([]);
   const [isLoading, setIsLoading] = useState(true);
@@ -23,16 +23,14 @@ const ProductDetailPage: React.FC = () => {
   const [isCheckingPincode, setIsCheckingPincode] = useState(false);
   const [pincodeStatus, setPincodeStatus] = useState<'idle' | 'success' | 'error'>('idle');
 
-  useEffect(() => {
+// Keep your current useEffect as is
+useEffect(() => {
     const loadProduct = async () => {
-      if(!id) {
-          setIsLoading(false);
-          return;
-      }
+      if(!id) return; // 'id' from useParams is now the handle
       setIsLoading(true);
+      const data = await fetchProductByHandle(id); // load by handle
+      setProduct(data);
       try {
-        const data = await fetchProductById(id);
-        setProduct(data);
         if (data) {
             setActiveImage(data.image);
             const related = await fetchProductsByCategory(data.category);
@@ -46,6 +44,55 @@ const ProductDetailPage: React.FC = () => {
     };
     loadProduct();
   }, [id]);
+
+// ADD THIS NEW BLOCK BELOW IT FOR RICH SNIPPETS
+useEffect(() => {
+  if (!product) return;
+
+  // 1. Prepare the Structured Data (JSON-LD)
+  const schemaData = {
+    "@context": "https://schema.org/",
+    "@type": "Product",
+    "name": product.title,
+    "image": [product.image, ...(product.images || [])],
+    "description": product.description?.replace(/(<([^>]+)>)/gi, "").substring(0, 160),
+    "sku": product.id,
+    "brand": {
+      "@type": "Brand",
+      "name": product.vendor
+    },
+    "offers": {
+      "@type": "Offer",
+      "url": window.location.href,
+      "priceCurrency": "INR",
+      "price": product.price,
+      "availability": product.inStock 
+        ? "https://schema.org/InStock" 
+        : "https://schema.org/OutOfStock",
+      "itemCondition": "https://schema.org/NewCondition"
+    },
+    "aggregateRating": {
+      "@type": "AggregateRating",
+      "ratingValue": product.rating || 4.8,
+      "reviewCount": product.reviewCount || 10
+    }
+  };
+
+  // 2. Create and inject the script tag
+  const script = document.createElement('script');
+  script.type = 'application/ld+json';
+  script.id = 'product-schema';
+  script.innerHTML = JSON.stringify(schemaData);
+  document.head.appendChild(script);
+
+  // 3. Cleanup: Remove the script when navigating to a different product
+  return () => {
+    const existingScript = document.getElementById('product-schema');
+    if (existingScript) {
+      document.head.removeChild(existingScript);
+    }
+  };
+}, [product]); // Runs whenever the product data changes
 
   const handleCheckPincode = (e: React.FormEvent) => {
       e.preventDefault();

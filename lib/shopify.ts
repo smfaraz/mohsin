@@ -312,6 +312,7 @@ const normalizeProduct = (shopifyProduct: any): Product => {
 
   return {
     id: node.id,
+    handle: node.handle,
     title: node.title,
     vendor: node.vendor,
     category: inferredCategory,
@@ -377,6 +378,7 @@ const normalizeCustomer = (data: any): Customer => {
 
 const PRODUCT_FRAGMENT = `
   id
+  handle
   title
   description
   descriptionHtml
@@ -494,6 +496,24 @@ export const fetchProductsByCategory = async (category: string): Promise<Product
     } catch(err) {
         return [];
     }
+  }
+};
+
+export const fetchProductByHandle = async (handle: string): Promise<Product | undefined> => {
+  const query = `
+    query getProductByHandle($handle: String!) {
+      product(handle: $handle) {
+        ${PRODUCT_FRAGMENT}
+      }
+    }
+  `;
+  try {
+    const data: any = await shopifyFetch(query, { handle });
+    if (!data.product) return undefined;
+    return normalizeProduct(data.product);
+  } catch (error) {
+    console.error("Error fetching product by handle:", error);
+    return undefined;
   }
 };
 
