@@ -19,12 +19,13 @@ import OrderSuccessPage from './pages/OrderSuccessPage';
 import { CartProvider } from './context/CartContext';
 import { AuthProvider } from './context/AuthContext';
 
+// Integrated AI + WhatsApp Support component
+import SupportCenter from './components/SupportCenter';
 
-// Scroll to top on route change component
 const ScrollToTopOnMount = () => {
   React.useEffect(() => {
     window.scrollTo(0, 0);
-  }, [window.location.pathname]);
+  }, []);
   return null;
 };
 
@@ -34,7 +35,7 @@ function App() {
       <CartProvider>
         <Router>
           <ScrollToTopOnMount />
-          <div className="min-h-screen font-sans text-gray-800 bg-white flex flex-col">
+          <div className="min-h-screen font-sans text-gray-800 bg-white flex flex-col relative">
             <Header />
             <main className="flex-1">
               <Routes>
@@ -56,16 +57,9 @@ function App() {
             </main>
             <Footer />
             
-            {/* Sticky WhatsApp Button */}
-            <a 
-              href="https://wa.me/919390349389" 
-              className="fixed bottom-6 right-6 z-40 bg-green-500 text-white p-3 rounded-full shadow-lg hover:bg-green-600 transition-all hover:scale-110 flex items-center justify-center"
-              aria-label="Chat on WhatsApp"
-            >
-              <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                  <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
-              </svg>
-            </a>
+            {/* Unified Support Experience */}
+            <SupportCenter />
+            
           </div>
         </Router>
       </CartProvider>
