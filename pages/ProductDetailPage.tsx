@@ -30,6 +30,7 @@ useEffect(() => {
       setIsLoading(true);
       const data = await fetchProductByHandle(id); // load by handle
       setProduct(data);
+
       try {
         if (data) {
             setActiveImage(data.image);
@@ -40,6 +41,18 @@ useEffect(() => {
         console.error("Failed to load product", error);
       } finally {
         setIsLoading(false);
+      }
+      // Inside your existing loadProduct function, right after setProduct(data)
+      if (data) {
+          // Update Browser Title
+          document.title = `${data.title} - ${data.category} | Mohsin Surgicals`;
+          
+          // Update Meta Description
+          const metaDesc = document.querySelector('meta[name="description"]');
+          const descriptionText = data.description?.replace(/(<([^>]+)>)/gi, "").substring(0, 160);
+          if (metaDesc) {
+              metaDesc.setAttribute("content", descriptionText || "");
+          }
       }
     };
     loadProduct();
