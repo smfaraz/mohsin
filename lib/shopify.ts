@@ -287,7 +287,7 @@ const generateRating = (id: string) => {
 const normalizeProduct = (shopifyProduct: any): Product => {
   const node = shopifyProduct.node || shopifyProduct;
   const firstVariant = node.variants?.edges?.[0]?.node || node.variants?.[0] || {};
-
+  
   // Extract all images
   const edges = node.images?.edges || node.images || [];
   const images = Array.isArray(edges)

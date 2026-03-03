@@ -8,9 +8,9 @@ const AboutPage: React.FC = () => {
       {/* Hero Section */}
       <div className="bg-medical-light py-16 md:py-24">
         <div className="container mx-auto px-4 text-center">
-          <h1 className="text-4xl md:text-5xl font-heading font-bold text-medical-text mb-4">Empowering Healthcare at Home</h1>
+          <h1 className="text-4xl md:text-5xl font-heading font-bold text-medical-text mb-4">A Legacy of Healthcare Excellence</h1>
           <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-            {APP_NAME} bridges the gap between hospital-grade medical technology and patient care at home.
+            {APP_NAME} bridges the gap between top-tier medical technology and compassionate patient care, backed by decades of reliable service.
           </p>
         </div>
       </div>
@@ -19,19 +19,19 @@ const AboutPage: React.FC = () => {
       <div className="container mx-auto px-4 py-16">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
           <div>
-            <img 
-                src="https://picsum.photos/id/1062/600/400" 
-                alt="Medical Team" 
-                className="rounded-2xl shadow-lg border-4 border-white"
+            <img
+              src="https://picsum.photos/800/600?grayscale"
+              alt="Medical Team"
+              className="rounded-2xl shadow-lg border-4 border-white"
             />
           </div>
           <div className="space-y-6">
             <h2 className="text-3xl font-heading font-bold text-gray-800">Our Mission</h2>
             <p className="text-gray-600 leading-relaxed">
-              Mohsin Surgicals in Nampally, Hyderabad is a top player in the category Surgical Equipment Dealers in the Hyderabad. This well-known establishment acts as a one-stop destination servicing customers both local and from other parts of Hyderabad.
+              With over 20+ years of trusted offline presence, Mohsin Surgicals has established itself as a premier destination for high-quality surgical equipment and medical supplies in Hyderabad. Our well-known establishment serves as a reliable one-stop destination for hospitals, clinics, and individual patients across the region.
             </p>
             <p className="text-gray-600 leading-relaxed">
-              Our platform connects you directly with top-tier manufacturers, cutting out middlemen to ensure you get authentic devices at fair prices. Whether you are a caregiver for an elderly parent or a clinic administrator, we are committed to supporting your care journey.
+              Leveraging our deep industry expertise, we connect you directly with world-class manufacturers to ensure authentic, hospital-grade devices at competitive prices. Whether you are a clinic administrator or a caregiver for a loved one, our decades of experience mean we understand your needs and are dedicated to empowering your healthcare journey.
             </p>
           </div>
         </div>
@@ -40,44 +40,47 @@ const AboutPage: React.FC = () => {
       {/* Stats Section */}
       <div className="bg-medical-dark text-white py-12">
         <div className="container mx-auto px-4">
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
-                <div className="space-y-2">
-                    <Award size={32} className="mx-auto text-medical-primary" />
-                    <div className="text-3xl font-bold">10k+</div>
-                    <div className="text-sm opacity-80">Products Sold</div>
-                </div>
-                <div className="space-y-2">
-                    <Users size={32} className="mx-auto text-medical-primary" />
-                    <div className="text-3xl font-bold">5000+</div>
-                    <div className="text-sm opacity-80">Happy Customers</div>
-                </div>
-                <div className="space-y-2">
-                    <Globe size={32} className="mx-auto text-medical-primary" />
-                    <div className="text-3xl font-bold">100+</div>
-                    <div className="text-sm opacity-80">Cities Covered</div>
-                </div>
-                <div className="space-y-2">
-                    <Heart size={32} className="mx-auto text-medical-primary" />
-                    <div className="text-3xl font-bold">24/7</div>
-                    <div className="text-sm opacity-80">Support Available</div>
-                </div>
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+            <div className="space-y-2">
+              <Globe size={32} className="mx-auto text-medical-primary" />
+              <div className="text-3xl font-bold">10k+</div>
+              <div className="text-sm opacity-80">Products Delivered</div>
             </div>
+            <div className="space-y-2">
+              <Users size={32} className="mx-auto text-medical-primary" />
+              <div className="text-3xl font-bold">5000+</div>
+              <div className="text-sm opacity-80">Happy Clients</div>
+            </div>
+            <div className="space-y-2">
+              <Award size={32} className="mx-auto text-medical-primary" />
+              <div className="text-3xl font-bold">20+</div>
+              <div className="text-sm opacity-80">Years Offline Presence</div>
+            </div>
+            <div className="space-y-2">
+              <Heart size={32} className="mx-auto text-medical-primary" />
+              <div className="text-3xl font-bold">24/7</div>
+              <div className="text-sm opacity-80">Support Available</div>
+            </div>
+          </div>
         </div>
       </div>
 
-      {/* Team Section */}
+      {/* Values Section */}
       <div className="container mx-auto px-4 py-16 text-center">
-        <h2 className="text-3xl font-heading font-bold text-gray-800 mb-12">Leadership Team</h2>
-        <div className="grid grid-cols-1 sm:grid-cols-3 gap-8">
-            {[1, 2, 3].map((i) => (
-                <div key={i} className="group">
-                    <div className="relative overflow-hidden rounded-xl mb-4 max-w-xs mx-auto">
-                        <img src={`https://picsum.photos/id/${100 + i}/300/350`} alt="Team Member" className="w-full object-cover group-hover:scale-105 transition-transform duration-300" />
-                    </div>
-                    <h3 className="font-bold text-lg">Dr. Alex Morgan</h3>
-                    <p className="text-medical-primary text-sm font-medium">Co-Founder & CMO</p>
-                </div>
-            ))}
+        <h2 className="text-3xl font-heading font-bold text-gray-800 mb-12">Our Core Values</h2>
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div className="p-6 bg-white rounded-xl shadow-md border border-gray-100 hover:shadow-lg transition-shadow">
+            <h3 className="font-bold text-xl text-medical-text mb-3">Authenticity</h3>
+            <p className="text-gray-600">We source directly from trusted manufacturers to guarantee 100% genuine and reliable medical and surgical equipment.</p>
+          </div>
+          <div className="p-6 bg-white rounded-xl shadow-md border border-gray-100 hover:shadow-lg transition-shadow">
+            <h3 className="font-bold text-xl text-medical-text mb-3">Affordability</h3>
+            <p className="text-gray-600">By eliminating unnecessary intermediaries, we provide hospital-grade quality at competitive and transparent prices.</p>
+          </div>
+          <div className="p-6 bg-white rounded-xl shadow-md border border-gray-100 hover:shadow-lg transition-shadow">
+            <h3 className="font-bold text-xl text-medical-text mb-3">Customer Focus</h3>
+            <p className="text-gray-600">With 20+ years of offline experience, understanding and serving our clients' needs remains our highest priority.</p>
+          </div>
         </div>
       </div>
     </div>

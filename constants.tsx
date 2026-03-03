@@ -1,10 +1,10 @@
 import React from 'react';
 import { Product, Testimonial, Category } from './types';
-import { 
-  Stethoscope, 
-  Activity, 
-  Wind, 
-  Bed, 
+import {
+  Stethoscope,
+  Activity,
+  Wind,
+  Bed,
   BriefcaseMedical,
   Thermometer,
   Syringe
@@ -39,35 +39,35 @@ export const CATEGORIES: Category[] = [
     // Moved URL from icon to image
     image: "https://megamed.in/wp-content/uploads/2023/04/oxymed-auto-cpap-machine-500x500-1.webp",
   },
-  { 
-    name: "Patient Monitors", 
-    icon: <Activity size={28} />, 
+  {
+    name: "Patient Monitors",
+    icon: <Activity size={28} />,
     slug: "Patient Monitor",
-    image: "https://www.labtron.com/assets/products/LMPPM-A18/17494670661.webp" 
+    image: "https://www.labtron.com/assets/products/LMPPM-A18/17494670661.webp"
   },
-  { 
-    name: "Nebulizers", 
-    icon: <Wind size={28} />, 
+  {
+    name: "Nebulizers",
+    icon: <Wind size={28} />,
     slug: "Nebulizer",
-    image: "https://healthlifebd.com/wp-content/uploads/2024/02/Easy-Compressor-Nebulizer-Machine-1.jpg" 
+    image: "https://healthlifebd.com/wp-content/uploads/2024/02/Easy-Compressor-Nebulizer-Machine-1.jpg"
   },
-  { 
-    name: "Suction Machines", 
-    icon: <Syringe size={28} />, 
+  {
+    name: "Suction Machines",
+    icon: <Syringe size={28} />,
     slug: "Suction Machine",
-    image: "https://engiomed.ae/wp-content/uploads/2022/04/suction-machine.jpg" 
+    image: "https://engiomed.ae/wp-content/uploads/2022/04/suction-machine.jpg"
   },
-  { 
-    name: "Thermometers", 
-    icon: <Thermometer size={28} />, 
+  {
+    name: "Thermometers",
+    icon: <Thermometer size={28} />,
     slug: "Thermometer",
-    image: "https://images.unsplash.com/photo-1584634731339-252c581abfc5?q=80&w=600&auto=format&fit=crop" 
+    image: "https://images.unsplash.com/photo-1584634731339-252c581abfc5?q=80&w=600&auto=format&fit=crop"
   },
-  { 
-    name: "Hospital Furniture", 
-    icon: <Bed size={28} />, 
+  {
+    name: "Hospital Furniture",
+    icon: <Bed size={28} />,
     slug: "Hospital Furniture",
-    image: "https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?q=80&w=600&auto=format&fit=crop" 
+    image: "https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?q=80&w=600&auto=format&fit=crop"
   },
 ];
 
