@@ -13,7 +13,7 @@ const PolicyPage: React.FC = () => {
             <h1 className="text-3xl font-bold mb-6">Terms of Service</h1>
             <p className="mb-4">Welcome to Mohsin Surgicals. By accessing our website, you agree to be bound by these terms of service, all applicable laws and regulations, and agree that you are responsible for compliance with any applicable local laws.</p>
             <h3 className="text-xl font-bold mt-6 mb-3">1. Use License</h3>
-            <p className="mb-4">Permission is granted to temporarily download one copy of the materials (information or software) on Mohsin Surgicals's website for personal, non-commercial transitory viewing only.</p>
+            <p className="mb-4">Permission is granted to temporarily download one copy of the materials (information or software) on Mohsin Surgicals website for personal, non-commercial transitory viewing only.</p>
             <h3 className="text-xl font-bold mt-6 mb-3">2. Disclaimer</h3>
             <p className="mb-4">The materials on Mohsin Surgicals website are provided on an 'as is' basis. Mohsin Surgicals makes no warranties, expressed or implied, and hereby disclaims and negates all other warranties including, without limitation, implied warranties or conditions of merchantability, fitness for a particular purpose, or non-infringement of intellectual property or other violation of rights.</p>
           </>
