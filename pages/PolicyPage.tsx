@@ -15,7 +15,7 @@ const PolicyPage: React.FC = () => {
             <h3 className="text-xl font-bold mt-6 mb-3">1. Use License</h3>
             <p className="mb-4">Permission is granted to temporarily download one copy of the materials (information or software) on Mohsin Surgicals's website for personal, non-commercial transitory viewing only.</p>
             <h3 className="text-xl font-bold mt-6 mb-3">2. Disclaimer</h3>
-            <p className="mb-4">The materials on Mohsin Surgicals's website are provided on an 'as is' basis. Mohsin Surgicals makes no warranties, expressed or implied, and hereby disclaims and negates all other warranties including, without limitation, implied warranties or conditions of merchantability, fitness for a particular purpose, or non-infringement of intellectual property or other violation of rights.</p>
+            <p className="mb-4">The materials on Mohsin Surgicals website are provided on an 'as is' basis. Mohsin Surgicals makes no warranties, expressed or implied, and hereby disclaims and negates all other warranties including, without limitation, implied warranties or conditions of merchantability, fitness for a particular purpose, or non-infringement of intellectual property or other violation of rights.</p>
           </>
         );
       case 'returns':
