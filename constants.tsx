@@ -1,5 +1,6 @@
 import React from 'react';
 import { Product, Testimonial, Category } from './types';
+import tm from './tm.jpeg'
 import {
   Stethoscope,
   Activity,
@@ -57,7 +58,7 @@ export const CATEGORIES: Category[] = [
     name: "Masks & Accessories",
     icon: <User size={28} />,
     slug: "Masks & Accessories",
-    image: "https://images.unsplash.com/photo-1584622650111-993a426fbf0a?q=80&w=600&auto=format&fit=crop"
+    image: "mask.jpeg"
   },
   {
     name: "ECG Machines",
@@ -69,13 +70,13 @@ export const CATEGORIES: Category[] = [
     name: "Blood Pressure Monitors",
     icon: <Heart size={28} />,
     slug: "BP Monitor",
-    image: "https://images.unsplash.com/photo-1631815589968-fdb09a223b1e?q=80&w=600&auto=format&fit=crop"
+    image: "bp.jpeg"
   },
   {
     name: "Glucometers",
     icon: <Droplets size={28} />,
     slug: "Glucometer",
-    image: "https://images.unsplash.com/photo-1508847154043-be5407fcaa5a?q=80&w=600&auto=format&fit=crop"
+    image: "gluco.jpeg"
   },
   {
     name: "Nebulizers",
@@ -93,7 +94,7 @@ export const CATEGORIES: Category[] = [
     name: "Thermometers",
     icon: <Thermometer size={28} />,
     slug: "Thermometer",
-    image: "https://images.unsplash.com/photo-1584634731339-252c581abfc5?q=80&w=600&auto=format&fit=crop"
+    image: "tm.jpeg"
   },
   {
     name: "Hospital Furniture",
