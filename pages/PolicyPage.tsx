@@ -11,11 +11,11 @@ const PolicyPage: React.FC = () => {
         return (
           <>
             <h1 className="text-3xl font-bold mb-6">Terms of Service</h1>
-            <p className="mb-4">Welcome to MediEquip Direct. By accessing our website, you agree to be bound by these terms of service, all applicable laws and regulations, and agree that you are responsible for compliance with any applicable local laws.</p>
+            <p className="mb-4">Welcome to Mohsin Surgicals. By accessing our website, you agree to be bound by these terms of service, all applicable laws and regulations, and agree that you are responsible for compliance with any applicable local laws.</p>
             <h3 className="text-xl font-bold mt-6 mb-3">1. Use License</h3>
-            <p className="mb-4">Permission is granted to temporarily download one copy of the materials (information or software) on MediEquip Direct's website for personal, non-commercial transitory viewing only.</p>
+            <p className="mb-4">Permission is granted to temporarily download one copy of the materials (information or software) on Mohsin Surgicals's website for personal, non-commercial transitory viewing only.</p>
             <h3 className="text-xl font-bold mt-6 mb-3">2. Disclaimer</h3>
-            <p className="mb-4">The materials on MediEquip Direct's website are provided on an 'as is' basis. MediEquip Direct makes no warranties, expressed or implied, and hereby disclaims and negates all other warranties including, without limitation, implied warranties or conditions of merchantability, fitness for a particular purpose, or non-infringement of intellectual property or other violation of rights.</p>
+            <p className="mb-4">The materials on Mohsin Surgicals's website are provided on an 'as is' basis. Mohsin Surgicals makes no warranties, expressed or implied, and hereby disclaims and negates all other warranties including, without limitation, implied warranties or conditions of merchantability, fitness for a particular purpose, or non-infringement of intellectual property or other violation of rights.</p>
           </>
         );
       case 'returns':
@@ -37,7 +37,7 @@ const PolicyPage: React.FC = () => {
         return (
           <>
             <h1 className="text-3xl font-bold mb-6">Privacy Policy</h1>
-            <p className="mb-4">Your privacy is important to us. It is MediEquip Direct's policy to respect your privacy regarding any information we may collect from you across our website.</p>
+            <p className="mb-4">Your privacy is important to us. It is Mohsin Surgicals's policy to respect your privacy regarding any information we may collect from you across our website.</p>
             <h3 className="text-xl font-bold mt-6 mb-3">Information We Collect</h3>
             <p className="mb-4">We only ask for personal information when we truly need it to provide a service to you. We collect it by fair and lawful means, with your knowledge and consent.</p>
             <h3 className="text-xl font-bold mt-6 mb-3">How We Use Information</h3>
