@@ -58,7 +58,7 @@ export const CATEGORIES: Category[] = [
     name: "Masks & Accessories",
     icon: <User size={28} />,
     slug: "Masks & Accessories",
-    image: "https://ibb.co/MyPjbPZY"
+    image: "https://i.ibb.co/4w4Dc4K6/mask.jpg"
   },
   {
     name: "ECG Machines",
@@ -70,13 +70,13 @@ export const CATEGORIES: Category[] = [
     name: "Blood Pressure Monitors",
     icon: <Heart size={28} />,
     slug: "BP Monitor",
-    image: "https://ibb.co/93GnLYnN"
+    image: "https://i.ibb.co/mFSJwzJG/bp.jpg"
   },
   {
     name: "Glucometers",
     icon: <Droplets size={28} />,
     slug: "Glucometer",
-    image: "https://ibb.co/WvxBNPs9"
+    image: "https://i.ibb.co/7tYrxRbc/gluco.jpg"
   },
   {
     name: "Nebulizers",
@@ -94,7 +94,7 @@ export const CATEGORIES: Category[] = [
     name: "Thermometers",
     icon: <Thermometer size={28} />,
     slug: "Thermometer",
-    image: "https://ibb.co/zhgVG3HN"
+    image: "https://i.ibb.co/3ybmBxYk/tm.jpg"
   },
   {
     name: "Hospital Furniture",
